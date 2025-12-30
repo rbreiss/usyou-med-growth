@@ -43,7 +43,7 @@ export const Hero: React.FC<HeroProps> = ({ settings }) => {
         </h1>
         
         <p className="font-sans text-[#64748b] text-lg md:text-xl max-w-xl leading-relaxed mb-16">
-          Não é apenas gestão. É <span className="text-white">Arquitetura de Crescimento na Medicina</span>. Transformamos os dados brutos da sua clínica em listas semanais de lucro imediato. Seu time só precisa contatar o paciente.
+          Não é apenas gestão. É <span className="text-white">Arquitetura de Crescimento em {settings.productName}</span>. Transformamos os dados brutos para <span className="text-white">{settings.targetAudience}</span> em faturamento imediato.
         </p>
 
         <div className="flex flex-col md:flex-row gap-8 items-center">
