@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { BrandSettings } from '../types';
+import { BrandSettings } from '../types.ts';
 
 interface HeroProps {
   settings: BrandSettings;
