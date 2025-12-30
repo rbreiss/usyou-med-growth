@@ -1,21 +1,21 @@
 
 import React, { useState } from 'react';
-import { BrandSettings } from './types';
-import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { VideoBriefing } from './components/VideoBriefing';
-import { PainAgitation } from './components/PainAgitation';
-import { Methodology } from './components/Methodology';
-import { IntelligenceHub } from './components/IntelligenceHub';
-import { CaseStudy } from './components/CaseStudy';
-import { ComparisonTable } from './components/ComparisonTable';
-import { Qualification } from './components/Qualification';
-import { Pricing } from './components/Pricing';
-import { Guarantee } from './components/Guarantee';
-import { FAQ } from './components/FAQ';
-import { DiagnosticQuiz } from './components/DiagnosticQuiz';
-import { Footer } from './components/Footer';
-import { PersonalizationDrawer } from './components/PersonalizationDrawer';
+import { BrandSettings } from './types.ts';
+import { Navbar } from './components/Navbar.tsx';
+import { Hero } from './components/Hero.tsx';
+import { VideoBriefing } from './components/VideoBriefing.tsx';
+import { PainAgitation } from './components/PainAgitation.tsx';
+import { Methodology } from './components/Methodology.tsx';
+import { IntelligenceHub } from './components/IntelligenceHub.tsx';
+import { CaseStudy } from './components/CaseStudy.tsx';
+import { ComparisonTable } from './components/ComparisonTable.tsx';
+import { Qualification } from './components/Qualification.tsx';
+import { Pricing } from './components/Pricing.tsx';
+import { Guarantee } from './components/Guarantee.tsx';
+import { FAQ } from './components/FAQ.tsx';
+import { DiagnosticQuiz } from './components/DiagnosticQuiz.tsx';
+import { Footer } from './components/Footer.tsx';
+import { PersonalizationDrawer } from './components/PersonalizationDrawer.tsx';
 
 export default function App() {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
