@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { BrandSettings } from '../types';
+import { BrandSettings } from '../types.ts';
 
 interface PersonalizationDrawerProps {
   isOpen: boolean;
@@ -15,7 +15,7 @@ export const PersonalizationDrawer: React.FC<PersonalizationDrawerProps> = ({ is
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        setSettings(prev => ({ ...prev, logoUrl: reader.result as string }));
+        setSettings((prev: BrandSettings) => ({ ...prev, logoUrl: reader.result as string }));
       };
       reader.readAsDataURL(file);
     }
@@ -23,8 +23,8 @@ export const PersonalizationDrawer: React.FC<PersonalizationDrawerProps> = ({ is
 
   const resetSettings = () => {
     setSettings({
-      productName: 'Protocolo de Soberania',
-      targetAudience: 'Ultra High Net Worth Individuals',
+      productName: 'USYOU Med Growth',
+      targetAudience: 'Médicos Proprietários de Clínicas',
       logoUrl: null
     });
   };
@@ -67,7 +67,7 @@ export const PersonalizationDrawer: React.FC<PersonalizationDrawerProps> = ({ is
             <input 
               type="text" 
               value={settings.productName}
-              onChange={(e) => setSettings(prev => ({ ...prev, productName: e.target.value }))}
+              onChange={(e) => setSettings((prev: BrandSettings) => ({ ...prev, productName: e.target.value }))}
               className="w-full bg-transparent border-b border-white/10 py-3 focus:border-[#b39359] outline-none transition-all text-xs tracking-widest uppercase font-bold"
             />
           </div>
@@ -77,7 +77,7 @@ export const PersonalizationDrawer: React.FC<PersonalizationDrawerProps> = ({ is
             <input 
               type="text" 
               value={settings.targetAudience}
-              onChange={(e) => setSettings(prev => ({ ...prev, targetAudience: e.target.value }))}
+              onChange={(e) => setSettings((prev: BrandSettings) => ({ ...prev, targetAudience: e.target.value }))}
               className="w-full bg-transparent border-b border-white/10 py-3 focus:border-[#b39359] outline-none transition-all text-xs tracking-widest uppercase font-bold"
             />
           </div>
