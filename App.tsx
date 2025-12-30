@@ -15,9 +15,11 @@ import { Guarantee } from './components/Guarantee';
 import { FAQ } from './components/FAQ';
 import { DiagnosticQuiz } from './components/DiagnosticQuiz';
 import { Footer } from './components/Footer';
+import { PersonalizationDrawer } from './components/PersonalizationDrawer';
 
 export default function App() {
-  const [settings] = useState<BrandSettings>({
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const [settings, setSettings] = useState<BrandSettings>({
     productName: 'USYOU Med Growth',
     targetAudience: 'Médicos Proprietários de Clínicas',
     logoUrl: null
@@ -25,7 +27,7 @@ export default function App() {
 
   return (
     <div className="bg-[#000000] text-white min-h-screen font-sans selection:bg-[#b39359] selection:text-black">
-      <Navbar settings={settings} onOpenSettings={() => {}} />
+      <Navbar settings={settings} onOpenSettings={() => setIsSettingsOpen(true)} />
       
       <main>
         {/* 1. Hero Section */}
@@ -67,6 +69,14 @@ export default function App() {
       
       {/* 12. Rodapé */}
       <Footer settings={settings} />
+
+      {/* Painel de Personalização (Drawer) */}
+      <PersonalizationDrawer 
+        isOpen={isSettingsOpen} 
+        onClose={() => setIsSettingsOpen(false)} 
+        settings={settings}
+        setSettings={setSettings}
+      />
 
       {/* Visual background accents */}
       <div className="fixed top-0 left-0 w-full h-full pointer-events-none overflow-hidden z-0">
