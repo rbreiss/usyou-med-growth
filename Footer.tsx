@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { BrandSettings } from '../types';
+import { BrandSettings } from '../types.ts';
 
 interface FooterProps {
   settings: BrandSettings;
