@@ -7,7 +7,7 @@ interface NavbarProps {
   onOpenSettings: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ settings }) => {
+export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenSettings }) => {
   const navLinks = [
     { label: 'Problema', href: '#problema' },
     { label: 'Solução', href: '#solucao' },
@@ -35,9 +35,23 @@ export const Navbar: React.FC<NavbarProps> = ({ settings }) => {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 glass border-b border-white/5 px-6 md:px-12 py-6 flex justify-between items-center transition-all duration-700 bg-black/80 backdrop-blur-2xl">
       <div className="flex items-center gap-4">
-        <div className="text-[#b39359] font-bold tracking-[0.5em] text-sm md:text-lg uppercase">
-          USYOU
-        </div>
+        <button 
+          onClick={onOpenSettings}
+          className="flex items-center gap-3 group focus:outline-none"
+          title="Personalizar Marca"
+        >
+          {settings.logoUrl ? (
+            <img src={settings.logoUrl} alt="Logo" className="h-8 md:h-10 object-contain" />
+          ) : (
+            <div className="text-[#b39359] font-bold tracking-[0.5em] text-sm md:text-lg uppercase group-hover:text-white transition-colors">
+              USYOU
+            </div>
+          )}
+          <div className="w-px h-4 bg-white/10 group-hover:bg-[#b39359] transition-colors"></div>
+          <span className="text-[8px] tracking-[0.3em] uppercase text-white/40 group-hover:text-[#b39359] transition-colors hidden md:block">
+            Growth Architect
+          </span>
+        </button>
       </div>
 
       <div className="hidden lg:flex items-center gap-10">
